@@ -19,7 +19,13 @@ class DepartmentForm
 
                 FileUpload::make('image')
                     ->label('Foto Departemen')
+                    ->disk('s3')
                     ->image()
+                    ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
+                    ->maxSize(2048)
+                    ->imageResizeMode('contain')
+                    ->imageResizeTargetWidth(1600)
+                    ->imageResizeTargetHeight(1600)
                     ->directory('departments')
                     ->required()
                     ->imageEditor(),

@@ -15,6 +15,7 @@ RUN apk add --no-cache \
     icu-dev \
     libzip-dev \
     oniguruma-dev \
+    postgresql-dev \
     sqlite-dev \
     unzip \
     zip \
@@ -22,6 +23,7 @@ RUN apk add --no-cache \
     intl \
     mbstring \
     pdo \
+    pdo_pgsql \
     pdo_sqlite \
     bcmath \
     zip
@@ -42,9 +44,9 @@ RUN composer install \
     && rm -rf /root/.composer/cache
 
 RUN chmod +x /usr/local/bin/entrypoint \
-    && mkdir -p storage/logs bootstrap/cache database \
+    && mkdir -p storage/logs bootstrap/cache database public/storage \
     && touch database/database.sqlite \
-    && chown -R www-data:www-data storage bootstrap/cache database
+    && chown -R www-data:www-data storage bootstrap/cache database public/storage
 
 USER www-data
 

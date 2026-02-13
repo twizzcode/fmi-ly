@@ -13,6 +13,7 @@ class GalleriesTable
         return $table
             ->columns([
                 ImageColumn::make('image')
+                    ->disk('s3')
                     ->label('Foto'),
 
                 TextColumn::make('title')

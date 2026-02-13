@@ -96,7 +96,7 @@
                         {{-- Menampilkan Gambar Departemen --}}
                         @if($dept->image)
                             <div class="overflow-hidden rounded-xl mb-4">
-                                <img src="{{ asset('storage/' . $dept->image) }}" 
+                                <img src="{{ \Illuminate\Support\Facades\Storage::url($dept->image) }}" 
                                      alt="{{ $dept->name }}" 
                                      class="w-full h-40 object-cover hover:scale-105 transition-transform duration-500">
                             </div>

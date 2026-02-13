@@ -24,8 +24,14 @@ class DepartmentResource extends Resource
                     ->required(),
                 \Filament\Forms\Components\FileUpload::make('image')
                     ->label('Foto')
+                    ->disk('s3')
                     ->directory('departments')
                     ->image()
+                    ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
+                    ->maxSize(2048)
+                    ->imageResizeMode('contain')
+                    ->imageResizeTargetWidth(1600)
+                    ->imageResizeTargetHeight(1600)
                     ->required(),
             ]);
     }
@@ -35,6 +41,7 @@ class DepartmentResource extends Resource
         return $table
             ->columns([
                 \Filament\Tables\Columns\ImageColumn::make('image')
+                    ->disk('s3')
                     ->label('Foto'),
                 \Filament\Tables\Columns\TextColumn::make('name')
                     ->label('Nama Departemen')

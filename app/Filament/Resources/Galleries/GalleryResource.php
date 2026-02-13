@@ -25,6 +25,7 @@ class GalleryResource extends Resource
         return $table
             ->columns([
                 \Filament\Tables\Columns\ImageColumn::make('image')
+                    ->disk('s3')
                     ->label('Foto'),
                 \Filament\Tables\Columns\TextColumn::make('title')
                     ->label('Judul')

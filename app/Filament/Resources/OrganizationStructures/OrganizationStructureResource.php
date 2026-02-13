@@ -29,7 +29,13 @@ class OrganizationStructureResource extends Resource
                 ->schema([
                     \Filament\Forms\Components\FileUpload::make('photo')
                         ->label('Foto')
+                        ->disk('s3')
                         ->image()
+                        ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
+                        ->maxSize(2048)
+                        ->imageResizeMode('cover')
+                        ->imageResizeTargetWidth(1200)
+                        ->imageResizeTargetHeight(1200)
                         ->directory('organization')
                         ->required()
                         ->columnSpanFull(),

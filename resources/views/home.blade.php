@@ -107,7 +107,7 @@
                     
                     {{-- Container Foto --}}
                     <div class="relative w-full aspect-[4/3] overflow-hidden p-4 pb-0">
-                        <img src="{{ asset('storage/' . $dept->image) }}" 
+                        <img src="{{ \Illuminate\Support\Facades\Storage::url($dept->image) }}" 
                              alt="{{ $dept->name }}" 
                              class="w-full h-full object-cover rounded-[1.8rem] transition-transform duration-1000 group-hover:scale-110">
                         

@@ -39,7 +39,7 @@
                             
                             <div class="relative inline-block mb-4">
                                 <div class="w-32 h-32 rounded-full ring-4 ring-blue-50 ring-offset-2 overflow-hidden mx-auto transition-transform duration-300 group-hover:scale-105 shadow-md">
-                                    <img src="{{ asset('storage/' . $member['photo']) }}" 
+                                    <img src="{{ \Illuminate\Support\Facades\Storage::url($member['photo']) }}" 
                                          alt="{{ $member['name'] }}" 
                                          class="w-full h-full object-cover">
                                 </div>

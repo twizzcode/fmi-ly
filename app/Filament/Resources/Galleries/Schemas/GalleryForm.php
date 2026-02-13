@@ -20,7 +20,13 @@ class GalleryForm
 
                 FileUpload::make('image')
                     ->label('Pilih Foto')
+                    ->disk('s3')
                     ->image()
+                    ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
+                    ->maxSize(2048)
+                    ->imageResizeMode('contain')
+                    ->imageResizeTargetWidth(1920)
+                    ->imageResizeTargetHeight(1080)
                     ->directory('galeri-fmi')
                     ->required(),
 

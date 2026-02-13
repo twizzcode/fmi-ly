@@ -24,7 +24,7 @@
                 <div class="bg-white rounded-2xl shadow-xl overflow-hidden border group flex flex-col h-full">
                     {{-- Gambar dengan Efek Hover --}}
                     <div class="overflow-hidden relative">
-                        <img src="{{ asset('storage/' . $item->image) }}" 
+                        <img src="{{ \Illuminate\Support\Facades\Storage::url($item->image) }}" 
                              class="w-full aspect-video object-cover transform group-hover:scale-110 transition duration-500"
                              alt="{{ $item->title }}">
                         {{-- Overlay Tipis saat Hover --}}

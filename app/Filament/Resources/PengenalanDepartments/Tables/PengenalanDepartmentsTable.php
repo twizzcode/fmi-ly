@@ -13,6 +13,7 @@ class PengenalanDepartmentsTable
         return $table
             ->columns([
                 ImageColumn::make('image')
+                    ->disk('s3')
                     ->label('Foto')
                     ->rounded(),
 
