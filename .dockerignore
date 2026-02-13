@@ -1,0 +1,14 @@
+.git
+.gitignore
+node_modules
+vendor
+.env
+storage/logs
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/testing/*
+storage/framework/views/*
+storage/debugbar
+npm-debug.log
+yarn-error.log
+.DS_Store
